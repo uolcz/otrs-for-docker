@@ -2,6 +2,9 @@
 
 This is a home of mainly test image of OTRS 5 which runs PostgreSQL
 
+`master` branch is now on OTRS 5.0.22
+please check out branch `beta-6` for new OTRS 6 beta1
+
 # Setup
 
 Image is created as automated build, so could easily be pulled:
@@ -10,7 +13,7 @@ Image is created as automated build, so could easily be pulled:
 docker pull uolcz/otrs-for-docker
 ```
 
-For additional setup please see (PostgreSQL)[https://hub.docker.com/_/postgres/], where they describe couple options you can setup like:
+For additional setup please see [PostgreSQL](https://hub.docker.com/_/postgres/), where they describe couple options you can setup like:
 
 ```
 POSTGRES_PASSWORD
@@ -84,3 +87,8 @@ You may actually need to run docker/docker-compose with `sudo`, varies
 according to your local settings...
 
 Also this image was neve rintended for production usage, purely testing purposes
+
+MacOS users be aware of [pow](http://pow.cx/) webserver, it is not enough just
+to kill the process or some such, it needs to be uninstalled completely in
+order to have port 80 available (it would prohibit any further mapping of that
+port from image anywhere and so...)
