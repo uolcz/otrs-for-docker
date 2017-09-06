@@ -25,7 +25,8 @@ RUN a2enmod perl
 RUN a2enmod deflate
 RUN a2enmod filter
 RUN a2enmod headers
-RUN cp /opt/otrs/scripts/apache2-httpd.include.conf /etc/apache2/sites-available/zzz_otrs.conf
+RUN echo 'ServerName localhost' > /etc/apache2/sites-available/zzz_otrs.conf
+RUN cat /opt/otrs/scripts/apache2-httpd.include.conf >> /etc/apache2/sites-available/zzz_otrs.conf
 RUN a2dissite 000-default
 RUN a2ensite zzz_otrs
 RUN service apache2 restart
