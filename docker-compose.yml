@@ -12,7 +12,7 @@ services:
  otrs:
    depends_on:
      - postgres
-   image: uolcz/otrs-for-docker
+   image: uolcz/otrs-for-docker:beta-6
    ports:
      - "80:80"
    restart: always

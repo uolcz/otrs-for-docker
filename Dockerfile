@@ -11,7 +11,7 @@ RUN apt-get install -y libapache2-mod-perl2 libdbd-mysql-perl libtimedate-perl l
   libtemplate-perl libdbd-pg-perl libdigest-md5-perl curl apache2
 
 # OTRS source
-RUN curl -fsSL "http://ftp.otrs.org/pub/otrs/otrs-latest.tar.gz" \
+RUN curl -fsSL "http://ftp.otrs.org/pub/otrs/otrs-6.0.0.beta1.tar.gz" \
     | tar -xzC "/opt"
 
 RUN mv /opt/otrs-* /opt/otrs
@@ -42,4 +42,3 @@ RUN bin/otrs.SetPermissions.pl --web-group=www-data
 EXPOSE "80"
 
 CMD apachectl -D FOREGROUND
-
