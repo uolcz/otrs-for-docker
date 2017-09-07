@@ -29,13 +29,13 @@ sub Load {
     # ---------------------------------------------------- #
 
     # The database host
-    $Self->{DatabaseHost} = 'postgres';
+    $Self->{DatabaseHost} = 'localhost';
 
     # The database name
     $Self->{Database} = 'otrs';
 
     # The database user
-    $Self->{DatabaseUser} = 'postgres';
+    $Self->{DatabaseUser} = 'otrs';
 
     # The password of database user. You also can use bin/otrs.Console.pl Maint::Database::PasswordCrypt
     # for crypted passwords
