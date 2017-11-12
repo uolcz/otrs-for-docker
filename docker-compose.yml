@@ -1,21 +1,23 @@
 version: '2'
 
-services:
- postgres:
-   image: postgres
-   volumes:
-     - db_data:/var/lib/postgres
-   restart: always
-   environment:
-     POSTGRES_DB: otrs
-
- otrs:
-   depends_on:
-     - postgres
-   image: uolcz/otrs-for-docker
-   ports:
-     - "80:80"
-   restart: always
-
 volumes:
   db_data:
+
+services:
+  postgres:
+    image: postgres
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: otrs
+
+  otrs:
+    depends_on:
+      - postgres
+    image: uolcz/otrs-for-docker
+    ports:
+      - "80:80"
+    restart: always
