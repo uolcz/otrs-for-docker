@@ -8,7 +8,7 @@ RUN apt-get install -y libapache2-mod-perl2 libdbd-mysql-perl libtimedate-perl l
   libio-socket-ssl-perl libpdf-api2-perl libdbd-mysql-perl libsoap-lite-perl libtext-csv-xs-perl \
   libjson-xs-perl libapache-dbi-perl libxml-libxml-perl libxml-libxslt-perl libyaml-perl \
   libarchive-zip-perl libcrypt-eksblowfish-perl libencode-hanextra-perl libmail-imapclient-perl \
-  libtemplate-perl libdbd-pg-perl libdigest-md5-perl curl apache2
+  libtemplate-perl libdbd-pg-perl libdigest-md5-perl curl apache2 librose-datetime-perl
 
 # OTRS source
 RUN curl -fsSL "http://ftp.otrs.org/pub/otrs/otrs-latest.tar.gz" \
@@ -42,4 +42,3 @@ RUN bin/otrs.SetPermissions.pl --web-group=www-data
 EXPOSE "80"
 
 CMD apachectl -D FOREGROUND
-
